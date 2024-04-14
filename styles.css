@@ -1,0 +1,327 @@
+body, html{
+    margin: 0;
+    padding: 0px;
+    font-family: "Overpass Mono", monospace;
+    color: #004F71;
+    font-size: 14px;
+    background-color: #eaf1f5;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#references {
+    margin-top: 10px;
+    padding: 16px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.nav-linke.active {
+    color: #004F71;
+}
+
+
+pre code {
+  background-color: #E8ECF1;
+  border: 1px solid #999;
+  color: #427aa1;
+  display: block;
+  padding: 16px;
+}
+a {
+    color: #004F71;
+}
+code {
+    color: #d63384;
+}
+
+
+
+section {
+    padding: 60px;
+    margin: 5px;
+    
+}
+
+section .content  {
+    background: #F2F7FC;
+    padding: 60px;
+    
+    
+}
+
+/* page1 Introdunction*/
+.intro a {
+    padding: 8px;
+    
+
+}
+
+.intro li {
+    margin-top: 3px;
+}
+
+.cat-img {
+    width: 100px;
+    height: 100px;
+   
+    margin-right: 20px;
+}
+
+#anchor pre {
+    height: 80px;
+}
+
+#anchor p {
+    margin-bottom: 0px;
+    
+
+}
+
+#introduction, #anchor, #browser,#AJAX, .header {
+    margin: 20px 0;
+    padding:8px
+    
+}
+
+.mermaid {
+    margin: 20px 0;
+    padding: 8px;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* page2 History*/
+#quiz-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#quiz-container h1 {
+    text-align: center;
+}
+
+#quiz-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#quiz-container ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#quiz-container ul li:hover {
+    background: #f0f0f0;
+}
+
+#quiz-container ul li.correct {
+    background: #d9f7d5;
+}
+
+#quiz-container ul li.incorrect {
+    background: #f7d5d9;
+}
+
+button {
+    padding: 8px 16px;
+    background: #004F71;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00354e;
+}
+
+#quiz-container  button {
+    padding: 8px 16px;
+    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page2-section {
+    margin: 20px 0;
+    padding:8px
+}
+
+/* page3 About me*/
+
+.download {
+    height: 62px;  
+    
+}
+.resume .download {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.resume .download a {
+    
+    padding: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.resume .download svg {
+    height: 20px;
+    width: 20px;
+    
+}
+
+.resume .content h1,
+.resume .content h2,
+.resume .content h3{
+
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+
+
+
+.resume-container {
+    display: flex;
+    width: 100%;
+    
+}
+
+.resume-header {
+    display: flex;
+    
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.left-box {
+    flex: 0 0 25%;
+    padding-right: 24px;
+}
+
+.left-box p {
+    margin-bottom: 0px;
+}
+
+.right-box {
+    flex: 0 0 75%;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.personal-info {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows:  1fr 1fr;
+}
+
+
+
+.bio {
+    margin-top: 20px;
+}
+
+.work-experience .job {
+    
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.work-experience h2 {
+    margin-bottom: 20px;
+}
+
+.education h2 {
+    
+    margin-bottom: 20px;
+}
+
+
+
+.resume a {
+    
+    text-decoration: none;
+    color: #004F71;
+} 
+
+a:hover {
+    text-decoration: none;
+} 
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+
+    
+}
+
+.skills li {
+    background: white;
+    margin-bottom: 5px;
+    padding: 5px 18px;
+    display: inline-block;
+    border: black 1px solid;
+}
+
+.job {
+    display: flex;
+}
+
+.skills {
+    display: flex;
+    margin-top: 20px;
+}
+

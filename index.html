@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history of hyperlinks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #F2F7FC;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">CITS5505 Individual Project</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#page1">Introduction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#page2">History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#page3">About me</a>
+              </li>
+              
+             
+            </ul>
+            
+          </div>
+        </div>
+    </nav>
+    <section class="intro page active" id="page1">
+        
+        <div class = "content">
+            <div class="header">
+                <h1>Understanding Hyperlinks: From Web Developer's Anchor Tags to Browser's HTTP Requests</h1>
+                <p><b>Hyperlinks</b>, or simply links, are fundamental to the interconnected nature of the <i>World Wide Web</i>. 
+                    They allow users to <b>click</b> on a connection from one web resource to another, which can be a different point on the same page, another page on the same site, or a different website altogether. 
+                </p>
+                <p>This page will explore how hyperlinks work from both a <b>web developer's</b> perspective and how <b>browsers</b> handle these links, including the role of <i>HTTP requests</i>. 
+                    Additionally, we'll look at how <b>AJAX</b> enhances the interactivity of web pages using these links.</p>
+
+                <div>
+                    <h2>Table of Contents</h2>
+                    <ul>
+                        <li><a href="#introduction">What is a Hyperlink?</a></li>
+                        <li><a href="#anchor">Hyperlinks for Web Developers: The Anchor Tag</a></li>
+                        <li><a href="#browser">How Browsers Handle Hyperlinks</a></li>
+                        <li><a href="#AJAX">Implementing AJAX with Hyperlinks</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="introduction">
+                <h2>What is a Hyperlink?</h2>
+                <p>In the simplest terms, a hyperlink is a reference to data that the reader can directly follow either by clicking or by hovering. Typically, this data is another web page, but it can also be an image, a video file, a program, or other types of data.
+                </p>
+                <div class="types">
+                    <p>Hyperlinks can be classified into several types based on their destination:</p>
+                    <ul>
+                        <li><strong>Text Links:</strong> These are hyperlinks embedded within text, typically underlined and colored differently to stand out from the surrounding content.</li>
+                        <a href="https://www.google.com">I am a hyperlink, click me to redirect to google.com</a>
+                        <li><strong>Image Links:</strong> These hyperlinks are associated with images, allowing users to click on the image to navigate to the linked resource.</li>
+                        <a href="https://www.google.com/search?q=cats"><img src="./cat-logo.png" alt="placeholder image" class="cat-img"></a>
+                        <li><strong>Button Links:</strong> Buttons can also be used as hyperlinks, providing a more prominent call-to-action for users to click and navigate to another page.</li>
+                        <button onclick="window.location.href='https://www.google.com'">Visit Google</button>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="anchor">
+                <h2>Hyperlinks for Web Developers: The Anchor Tag</h2>
+                <p>For web developers, hyperlinks are primarily implemented using the HTML <code>&lt;a&gt;</code> tag, known as the anchor tag. Here's the basic syntax:</p>
+                <pre>
+                    <code>&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code>
+                </pre>
+                <ul>
+                    
+                    <li>The <code>href</code> stands for hypertext reference and contains the URL (Uniform Resource Locator) or the path to the resource.</li>
+                    <li>The text between the opening and closing <code>&lt;a&gt;</code> tags is the visible content of the hyperlink.</li>
+                       
+                </ul>
+                
+
+                <div class="usage">
+                    <h4>Usage Examples</h4>
+                    <p>Hyperlinks can be used for various purposes, including:</p>
+                    <ul>
+                        <li>Linking to external websites. </li>
+                        <a href="https://www.google.com">I am a hyperlink, click me to redirect to google.com</a>
+                        <li>Navigating to specific sections within a page using anchors.</li>
+                        <a href="#" id="load-content"> I am a hyperlink , click me to load content dynamically</a>
+                        <li>Initiating downloads of files.</li>
+                        <a href="./resume.pdf">I am a hyperlink, click me to download a PDF file</a>
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+
+            <div id="browser">
+                <h2>How Browsers Handle Hyperlinks</h2>
+                <p>When a user clicks a hyperlink, the browser performs several actions:</p>
+                <ol>
+                    <li><b>Parsing the URL</b>: Determines if the URL is absolute or relative and where it points to.</li>
+                    <li><b>HTTP Request</b>: The browser sends an HTTP request to the server hosting the resource. This request includes methods like <b><code>GET</code></b> or <b><code>POST</code></b>, and headers that describe the type of content being requested.</li>
+                    <li><b>Response Handling</b>: The server processes the request and sends back a response, typically in the form of an HTML document, which the browser renders for the user.</li>
+                    
+                </ol>
+                <h4>Example: User clicks a hyperlink visting <a href="www.google.com">google.com</a></h4>
+                <p>Here is a <a href="https://mermaid.js.org">Mermaid</a> sequence diagram illustrating the sequence of actions a browser takes when a user clicks a hyperlink, using the example of visiting "google.com". 
+                    This diagram will detail the process from the URL parsing to the content retrieval stages.</p>
+                    <div class="mermaid">
+                        sequenceDiagram
+                            participant User as User
+                            participant Browser as Browser
+                            participant Server as Google Server
+                            
+                            User->>+Browser: Clicks on hyperlink (www.google.com)
+                            Browser->>Browser: Parses URL
+                            Browser->>+Server: HTTP GET request to www.google.com
+                            Server-->>-Browser: Responds with HTML content
+                            Browser-->>User: Renders the Google home page
+                    </div>
+            </div>
+                
+            <div id="AJAX">
+                <h2>Implementing AJAX with Hyperlinks</h2>
+                <p>Hyperlinks can be used to load content dynamically without refreshing the entire page. 
+                    This technique, known as <strong>AJAX</strong>   (Asynchronous JavaScript and XML), 
+                    allows web pages to fetch data from a server and update specific parts of the page in real-time.</p>
+
+                <p>The core motivation behind AJAX is The core motivation behind AJAX is to improve the user experience by making web applications faster and more responsive. 
+                    It allows parts of web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. 
+                    This means that it is possible to update parts of a webpage without reloading the whole page.</p>
+
+                <p> The traditional web application model requires a complete page reload to update the content, 
+                    but with AJAX, only necessary sections of the page are updated. 
+                    This technique enhances the performance of the application and provides a more dynamic user experience.</p>
+
+                <h4>Example: Making an AJAX Request to a Public API</h4>
+
+                <p>Here, we will use the <i>JSONPlaceholder API</i>, a free online REST API that you can use for testing and prototyping. 
+                    This example will fetch posts from the JSONPlaceholder API using AJAX and display them on the web page.</p>
+
+                <p>You can click the <i>Fetch Data</i> button to trigger the AJAX request and <i>Clear Data</i> button to clear the displayer posts.</p>
+                <button id="fetchData">Fetch Data</button>
+                <button id="clearData">Clear Data</button>
+                <div id="posts"></div>
+                <div class="mermaid">
+                    sequenceDiagram
+                        participant User as User
+                        participant Browser as Browser
+                        participant API as JSONPlaceholder API
+
+                        User->>+Browser: Clicks on "Fetch Data" button
+                        Browser->>+Browser: Renders page with AJAX script
+                        Browser->>+API: AJAX GET request to JSONPlaceholder API
+                        API-->>-Browser: Returns JSON data
+                        Browser-->>-Browser: Parses JSON and updates HTML
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    
+    <section class="history page" id="page2">
+        
+        <div class = "content">
+            <div class="page2-section">
+                <h1>The History of Hyperlinks: Technologies, Applications, and Evolving Uses</h1>
+                <p>The concept of the hyperlink is integral to the World Wide Web, allowing users to navigate between different digital resources with a simple click. The evolution of hyperlinks is closely tied to the history of the internet and web development. Below, we explore this progression, highlighting key technologies, applications, and the changing ways in which hyperlinks have been used both for presenting and organizing content.</p>
+            </div>
+            
+            <div id="technology" class="page2-section">
+                <h2>Origins and Technological Evolution</h2>
+                <div id="origin">
+                    <h4>Early Concepts (40s-60s)</h4>
+                    <ul>
+                        <li><strong>Memex (1945)</strong>: The idea of hyperlinks predates the internet, originating with Vannevar Bush's concept of the "Memex" as described in his influential essay "As We May Think." The Memex was envisioned as a mechanical device that allowed users to create and follow associative trails between documents.</li>
+                        <li><strong>Project Xanadu (1960)</strong>:  Ted Nelson, who coined the term "hypertext," proposed Project Xanadu, which aimed to create a computer network with a universal library where every piece of text would be linked to its original source</li>
+                        
+                    </ul>
+                </div>
+                <div id="invention">
+                    <h4>The Invention of the Web (80s-90s)</h4>
+                    <ul>
+                        <li><strong>The Invention of the Web (1989-1991)</strong>: Tim Berners-Lee at CERN proposed and then implemented the first web browser and server. His system used a simple markup language called HTML (Hypertext Markup Language), which made extensive use of hyperlinks for navigating between "pages" or documents.</li>
+                        <li><strong>Expansion and Standardization</strong>: As the web grew, the use of hyperlinks expanded dramatically. The mid-1990s saw the development of CSS (Cascading Style Sheets) which allowed for more stylistic and complex presentations of hyperlinked content. JavaScript emerged as a scripting language that enabled dynamic interaction with hyperlinked content, enhancing user engagement without page reloads (AJAX).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="applications" class="page2-section">
+                <h2>Applications and Impact</h2>
+            <ul>
+                <li><strong>Web Navigation</strong>: Hyperlinks became fundamental to <i>search engine</i> algorithms, which rank pages based on the quantity and quality of inbound links.Early web directories like <i>Yahoo!</i> structured vast amounts of information through curated lists of hyperlinks.</li>
+                <li><strong>Social Media and Online Collaboration</strong>: Platforms like <i>Wikipedia</i> and later social media networks like <i>Facebook</i> and <i>Twitter</i> leveraged hyperlinks to connect users with varying content types, from articles to personal posts, significantly impacting how information is shared and consumed.</li>
+                <li><strong>Commerce and Advertising</strong>: <i>E-commerce</i> websites use hyperlinks to guide potential customers through product catalogs, promotional content, and purchase processes. In digital marketing, hyperlinks track user interactions for analytics and targeted advertising.</li>
+            </ul>
+            </div>
+            
+            <div id="quiz-container" class="page2-section">
+                <h4>Hyperlink History Quiz</h4>
+                <div id="question"></div>
+                <ul id="answers"></ul>
+                <button onclick="nextQuestion()" id="quiz-button">Next Question</button>
+                <div id="result"></div>
+            </div>
+            
+
+        </div>
+    </section>
+    
+    <section class="resume page" id="page3">
+        <div class="download">
+            <a href="./resume.pdf">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="content">
+            <div class="resume-header">
+                <div class="left-box">
+                    <h3>Baoyue Zhang</h3>
+                    <h3>Software Engineer</h3>
+                    
+                </div>
+                <div class="right-box">
+                    
+                    <div class="personal-info">
+                        <div class="info-grid">
+                            <p>Perth, WA   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>  
+                            <p><a href="23967286@studengt.uwa.edu.au">23967286@student.uwa.edu.au</a></p>
+                            <p><a href="www.linkedin.com/in/celiaz1104">linkedin.com/in/celiaz1104</a> &nbsp;&nbsp;&nbsp; </p>
+                            <p><a href="https://github.com/berry1104">github.com/berry1104</a></p>
+                        </div>
+                        <img src="./1.jpeg" alt="Heather Vandervecht" class="profile-image">
+                    </div>
+                    <div class="bio">
+                        <p><b>Passionate software engineer with a year of experience in a hospital setting, dedicated to bridging technology and diverse fields to empower industries and enrich lives. Skilled in web development, data analytics, and machine learning, I thrive on solving complex problems and creating solutions that simplify everyday challenges. Lover of interdisciplinary pursuits and a firm believer in the power of tech to transform the world.  </b></p>
+                    
+                    </div>
+                </div>
+            </div> 
+            <div class="work-experience">
+                <h2>Experience</h2>
+                
+                <div class="job">
+                    <div class="left-box">
+                        <h3>Coders for Causes</h3>
+                        <p>Nov 2023 - Feb 2024  </p>
+                        <p>Perth, WA</p>
+                    </div>
+    
+                    <div class="right-box">
+                        <h3>Vonlunter Web Developer</h3>
+                        <p>Contributed to enhancing digital engagement through the development of a responsive "Basic Information" page using Next.js, TailwindCSS, and TypeScript, tailored to Figma designs. I spearheaded the implementation of a donation page, optimizing the backend payment process with REST APIs for increased transaction efficiency and integrated robust testing with Mocha and Chai for reliability. Additionally, I streamlined content management by establishing a headless WordPress CMS, reducing deployment times by 50% and elevating code quality with ESLint and Prettier.</p>
+                    </div>
+    
+                </div>
+    
+    
+                
+                <div class="job">
+                    <div class="left-box">
+                        <h3>Cardiovascular Hospital</h3>
+                        <p>Sep 2021 - June 2022 </p>
+                        <p>Beijing, China</p>
+                    </div>
+    
+                    <div class="right-box">
+                        <h3>Software Engineer </h3>
+                        <p>Led the creation of an advanced machine learning pipeline using Python, enhancing data manipulation with pandas and model development with scikit-learn for predictive analytics. I automated testing and deployment processes via CI/CD with Jenkins, improving the efficiency of .NET services and machine learning model iterations. My development of a robust .NET-based backend interfaced with SQL Server databases to fetch patient information and integrate AI-driven risk score calculations. I also designed a user-friendly interface in React, seamlessly integrating risk score insights into the hospital’s EMR system to aid healthcare professionals in intuitive data interpretation.</p>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="education">
+                <h2>Education</h2>
+                <div class ="resume-container">
+                    <div class="left-box">
+                        <p>July 2023 - Current</p>
+                    </div> 
+                    <div class="right-box">
+                        <h3>University of Western Australia</h3>
+                        <p>Master of Information Technology</p>
+                    </div>
+                </div>
+    
+                <div class ="resume-container">
+                    <div class="left-box">
+                        <p>Sep 2017 - June 2021</p>
+                        
+                    </div>
+                    <div class="right-box">
+                        <h3>Northeastern University</h3>
+                        <p>Bachelor of Biomedical Engineering</p>
+                    </div>
+                </div>
+            </div>
+            <div class="skills">
+                <h2 class="left-box">Skills</h2>
+                <ul class="right-box">
+                    <li>React </li>
+                    <li>JavaScript</li>
+                    <li>TypeSript</li>
+                    <li>NextJs</li>
+                    <li>Node.js</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>SQL</li>
+                    <li>AWS</li>
+                    <li>Git</li>
+                    <li>Liunx</li>
+                    <li>REST API</li>
+                    <li>Matlab</li>
+                    <li>Data Visulization</li>
+                    <li>Data Anlysis</li>
+                    <li>Machine Learning</li>
+                    <li>Image Procseeing</li>
+                    <li>Problem-solving</li>
+                    <!-- ... other skills ... -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div id="references">
+            <h3>Sources and References</h3>
+            <ul>
+                <li>Bush, V. (1945). As We May Think. The Atlantic Monthly.</li>
+                <li>Nelson, T. (1960). Project Xanadu. Retrieved from http://xanadu.com</li>
+                <li>Berners-Lee, T. (1989). Information Management: A Proposal. CERN.</li>
+                <li>Engelbart, D. (1968). The Mother of All Demos. SRI International.</li>
+            </ul>
+            <p>Description of AI Assistance: The content provided on this page was assisted by an AI conversational model, ChatGPT. It helped in gathering, structuring, and phrasing the historical information about hyperlinks, ensuring the accuracy and relevance of the data presented.</p>
+        </div>
+        <p>© 2024 Baoyue Zhang CITS5505 Individual Project</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
